@@ -1,0 +1,124 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Add image to map with leaflet.js imageOverlay</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+      <script type="text/javascript" src="https://publiclab.github.io/Leaflet.DistortableImage/node_modules/leaflet/dist/leaflet.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">
+      <script type="text/javascript" src="https://publiclab.github.io/Leaflet.DistortableImage/node_modules/jquery/dist/jquery.js"></script>
+      <script type="text/javascript" src="https://publiclab.github.io/Leaflet.DistortableImage/node_modules/leaflet-toolbar/dist/leaflet.toolbar.js"></script>
+      <script type="text/javascript" src="https://publiclab.github.io/Leaflet.DistortableImage/node_modules/webgl-distort/dist/webgl-distort.js"></script>
+      <script type="text/javascript" src="https://publiclab.github.io/Leaflet.DistortableImage/node_modules/glfx/glfx.js"></script>
+      <script type="text/javascript" src="https://publiclab.github.io/Leaflet.DistortableImage/dist/leaflet.distortableimage.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://publiclab.github.io/Leaflet.DistortableImage/dist/leaflet.distortableimage.css">
+      <link rel="stylesheet" type="text/css" href="https://publiclab.github.io/Leaflet.DistortableImage/node_modules/leaflet-toolbar/dist/leaflet.toolbar.css">
+      <script type="text/javascript" src="https://dayjournal.github.io/Leaflet.Control.Opacity/plugin/Leaflet.Control.Opacity/dist/L.Control.Opacity.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://dayjournal.github.io/Leaflet.Control.Opacity/plugin/Leaflet.Control.Opacity/dist/L.Control.Opacity.css">
+      <script type="text/javascript" src="https://mrmufflon.github.io/Leaflet.Coordinates/dist/Leaflet.Coordinates-0.1.3.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://mrmufflon.github.io/Leaflet.Coordinates/dist/Leaflet.Coordinates-0.1.3.css">
+
+  <style id="compiled-css" type="text/css">
+      body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+    width: 100vw;
+}
+    /* EOS */
+  </style>
+
+ 
+</head>
+<body class="">
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+<div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom ldi" tabindex="0" style="position: relative; outline: none;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(90px, -198px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(772px, -50px, 0px) scale(2.10027);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(35px, -154px, 0px) scale(1.05014);"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/128/87.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(149px, 407px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/128/86.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(149px, 151px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/127/87.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-107px, 407px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/129/87.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(405px, 407px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/128/88.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(149px, 663px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/127/86.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-107px, 151px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/129/86.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(405px, 151px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/127/88.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-107px, 663px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/129/88.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(405px, 663px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/128/85.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(149px, -105px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/126/87.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-363px, 407px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/130/87.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(661px, 407px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/128/89.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(149px, 919px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/127/85.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-107px, -105px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/129/85.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(405px, -105px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/126/86.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-363px, 151px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/130/86.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(661px, 151px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/126/88.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-363px, 663px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/130/88.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(661px, 663px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/127/89.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-107px, 919px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/129/89.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(405px, 919px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/126/85.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-363px, -105px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/130/85.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(661px, -105px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/126/89.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-363px, 919px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://toolserver.org/tiles/hikebike/8/130/89.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(661px, 919px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://unpkg.com/leaflet@1.0.2/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(210px, 375px, 0px);"></div><div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="720" height="424" viewBox="-150 163 720 424" style="transform: translate3d(-150px, 163px, 0px);"><g><path class="leaflet-interactive" stroke="#3388ff" stroke-opacity="1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="#3388ff" fill-opacity="0.2" fill-rule="evenodd" d="M205.06768503856438,374.6514670235847a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 "></path></g></svg><img class="leaflet-image-layer leaflet-zoom-animated" crossorigin="" src="https://i.imgur.com/ZkXsYgF.jpg" alt="" style="z-index: 1; transform: translate3d(1327px, 540px, 0px) matrix3d(0.0108696, 0, 0, 0, 0, 0.0105708, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 0px 0px 0px; opacity: 0.43;"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://unpkg.com/leaflet@1.0.2/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(210px, 375px, 0px); z-index: 375;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(34429px, 23489.5px, 0px) scale(134.418);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"><div class="leaflet-control-layers leaflet-control-layers-expanded leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="#" title="Layers"></a><form class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"></div><div class="leaflet-control-layers-separator" style="display: none;"></div><div class="leaflet-control-layers-overlays"><label><div><span> Image</span></div><div data-children-count="1"><input type="range" class="leaflet-control-layers-range" min="0" max="100"></div></label></div></form></div></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | Data © <a href="http://osm.org/copyright">OpenStreetMap</a></div></div></div></div>
+
+
+
+
+    <script type="text/javascript">
+
+
+var center = [48.9, 366];
+var map = L.map('map').setView(center, 10);
+
+let tileLayer = L.tileLayer(
+  'http://toolserver.org/tiles/hikebike/{z}/{x}/{y}.png', {
+    attribution: 'Data © <a href="http://osm.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18
+  });
+
+let imgLayer = L.distortableImageOverlay('https://i.imgur.com/ZkXsYgF.jpg', {
+  corners: [{
+    "lat": 48.93098637635431,
+    "lng": 5.9351921081543
+  }, {
+    "lat": 48.93092998834006,
+    "lng": 6.0485744476319
+  }, {
+    "lat": 48.895195381465975,
+    "lng": 5.9369087219239
+  }, {
+    "lat": 48.895816089940624,
+    "lng": 6.04642868042
+  }],
+  editable: false
+});
+
+let opacityControl = L.control.opacity({
+  Image: imgLayer
+});
+
+let currentPosMarker = L.marker(center);
+let currentAccuracyMarker = L.circle(center, 1);
+
+map.whenReady(function() {
+  tileLayer.addTo(map);
+  imgLayer.addTo(map);
+  opacityControl.addTo(map);
+  currentPosMarker.addTo(map);
+  currentAccuracyMarker.addTo(map);
+  
+  map.locate({
+    setView: false,
+    watch: true,
+    maxZoom: 16,
+    enableHighAccuracy: true
+  })
+});
+
+function onLocationFound(e) {
+  var radius = e.accuracy / 2;
+  currentPosMarker.setLatLng(e.latlng).update();
+  currentAccuracyMarker.setLatLng(e.latlng).setRadius(radius);
+  let zoom = map.getZoom();
+  map.flyTo(e.latlng, map.getZoom());
+}
+
+function onLocationError(e) {
+  alert(e.message);
+}
+
+map.on('locationfound', onLocationFound);
+map.on('locationerror', onLocationError);
+
+
+
+
+
+ </script>
+
+
+
+
+</body></html>
