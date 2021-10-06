@@ -107,6 +107,16 @@
         let layersUrl = Object.values(
           layers._layers
         ).map(({ _url, _corners }) => ({ url: _url, corners: _corners }));
+        layersUrl.forEach(layerUrl => {
+          layerUrl.corners.forEach(corner => {
+            for (const key in corner) {
+              let element = corner[key];
+              if(typeof corner[key] === 'number'){
+                corner[key] = corner[key].toFixed(4)
+              }
+            }
+          })
+        })
         addToUrl("layers", layersUrl);
         console.info(layersUrl);
       };
@@ -173,7 +183,7 @@
         currentPosMarker.setLatLng(e.latlng).update();
         currentAccuracyMarker.setLatLng(e.latlng).setRadius(radius);
         let zoom = map.getZoom();
-        //map.flyTo(e.latlng, map.getZoom());
+        map.flyTo(e.latlng, map.getZoom());
       }
 
       function onLocationError(e) {
