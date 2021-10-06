@@ -82,7 +82,16 @@
       tabindex="0"
       style="position: relative; outline: none;"
     >
-     
+      <div class="leaflet-bottom leaflet-left" style="pointer-events: auto;">
+        <input
+          type="button"
+          id="Btn1"
+          value="+"
+          onclick="addNew()"
+          class="btnStyle span3"
+        />
+      </div>
+    </div>
 
     <script type="text/javascript">
       var center = [48.9, 6];
@@ -107,16 +116,16 @@
         let layersUrl = Object.values(
           layers._layers
         ).map(({ _url, _corners }) => ({ url: _url, corners: _corners }));
-        layersUrl.forEach(layerUrl => {
-          layerUrl.corners.forEach(corner => {
+        layersUrl.forEach((layerUrl) => {
+          layerUrl.corners.forEach((corner) => {
             for (const key in corner) {
               let element = corner[key];
-              if(typeof corner[key] === 'number'){
-                corner[key] = corner[key].toFixed(4)
+              if (typeof corner[key] === "number") {
+                corner[key] = corner[key].toFixed(4);
               }
             }
-          })
-        })
+          });
+        });
         addToUrl("layers", layersUrl);
         console.info(layersUrl);
       };
@@ -130,7 +139,7 @@
             let newLayer = L.distortableImageOverlay(l.url, {
               corners: l.corners,
               editable: true,
-              mode: 'lock'
+              mode: "lock"
             });
             addEvent(newLayer);
             imgGroup.addLayer(newLayer);
@@ -150,15 +159,19 @@
       let currentPosMarker = L.marker(center);
       let currentAccuracyMarker = L.circle(center, 1);
 
+      let addNew = () => {
+        let url = window.prompt("url", "https://i.imgur.com/ZkXsYgF.jpg");
+        let newLayer = L.distortableImageOverlay(url, {
+          editable: true
+        });
+
+        addEvent(newLayer);
+        imgGroup.addLayer(newLayer);
+      };
+
       map.on("click", (ev, kev) => {
         if (ev.originalEvent.shiftKey) {
-          let url = window.prompt("url", "https://i.imgur.com/ZkXsYgF.jpg");
-          let newLayer = L.distortableImageOverlay(url, {
-            editable: true
-          });
-
-          addEvent(newLayer);
-          imgGroup.addLayer(newLayer);
+          addNew();
         }
       });
 
